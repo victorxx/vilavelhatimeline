@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Praia da Costa - História, Turismo e Qualidade de Vida | Vila Velha - ES</title>
+  <meta name="description" content="Descubra tudo sobre o bairro Praia da Costa, em Vila Velha (ES): história, pontos turísticos, infraestrutura e qualidade de vida.">
+  <meta name="keywords" content="Praia da Costa, Vila Velha, Espírito Santo, turismo, imóveis, história, bairro, ES">
+ 
+
+  <style>
+    
+    #iframe-wrapper {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      max-width: 400px;
+      height: 50vh; /* Altura relativa no desktop */
+      max-height: 400px;
+      z-index: 9999;
+      border-radius: 10px 0 0 0;
+      box-shadow: -2px -2px 12px rgba(0,0,0,0.3);
+      background-color: #fff;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #iframe-fixo {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 10px 0 0 0;
+      display: block;
+    }
+
+    #close-btn {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      line-height: 32px;
+      text-align: center;
+      z-index: 10000;
+      display: none; /* Escondido inicialmente */
+      transition: background-color 0.3s ease;
+    }
+
+    #close-btn:hover {
+      background: rgba(255, 0, 0, 0.8);
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      #iframe-wrapper {
+        max-width: 100%;
+        height: 400px; /* Altura fixa menor */
+        border-radius: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
+
+      #iframe-fixo {
+        border-radius: 0;
+      }
+
+      #close-btn {
+        top: 6px;
+        right: 8px;
+        width: 28px;
+        height: 28px;
+        font-size: 18px;
+        line-height: 28px;
+      }
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #006699;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 960px;
+      margin: auto;
+      background: #fff;
+    }
+
+    h1, h2, h3 {
+      color: #006699;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Slideshow */
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: 20px 0;
+      overflow: hidden;
+    }
+
+    .slide {
+      display: none;
+      position: relative;
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      padding: 12px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #006699;
+      color: white;
+    }
+
+    /* Notícias */
+    section.noticias {
+      margin-top: 40px;
+    }
+
+    section.noticias article {
+      background: #eef8fc;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-left: 4px solid #006699;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    section.noticias article h3 {
+      margin-top: 0;
+    }
+
+    section.noticias a {
+      color: #006699;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Praia da Costa - Vila Velha (ES)</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Início</a></li>
+        <li><a href="#historia">História</a></li>
+        <li><a href="#turismo">Turismo</a></li>
+        <li><a href="#noticias">Notícias</a></li>
+        <li><a href="https://horavoo-git-main-victorsaibs-projects.vercel.app/">Horário de voos</a></li>
+        <li><a href="https://linhadotempoguarapari.netlify.app/">TIMELINE GUARAPARI</a></li>
+      
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <h2>Bem-vindo à Praia da Costa</h2>
+      <p>A Praia da Costa é um dos bairros mais valorizados e visitados de Vila Velha, Espírito Santo. Conhecida por sua orla vibrante, infraestrutura moderna e beleza natural, atrai moradores, turistas e investidores imobiliários.</p>
+
+<div class="slideshow-container">
+  <div class="slide active">
+    <a href="https://central.dokehost.com.br/aff.php?aff=90">
+      <img src="vps.jpg" alt="Vista aérea da Praia da Costa com mar azul e prédios ao fundo">
+    </a>
+  </div>
+
+  <div class="slide">
+    <a href="https://api.whatsapp.com/send?phone=5527999497001&text=Olá! Tenho interesse no aluguel temporada em Guarapari.">
+      <img src="seguro.jpg" alt="Caminhada no calçadão da orla ao entardecer">
+    </a>
+  </div>
+
+  <div class="slide">
+    <a href="https://api.whatsapp.com/send?phone=5527999497001&text=Olá! Tenho interesse no aluguel temporada em Guarapari.">
+      <img src="consorcio.jpeg" alt="Calçadão e mar da Praia da Costa">
+    </a>
+  </div>
+
+  <div class="slide">
+    <a href="https://geocredibnkvitoria.com/">
+      <img src="seguro.jpg" alt="Banner de serviços de seguros em Vila Velha">
+    </a>
+  </div>
+
+  <div class="slide">
+    <a href="https://geocredibnkvitoria.com/">
+      <img src="credito.jpg" alt="Crédito pessoal em destaque com paisagem urbana ao fundo">
+    </a>
+  </div>
+
+  <div class="slide">
+    <a href="https://www.airbnb.com.br/r/saibvictore?s=6&t=061n0g">
+      <img src="airbnb.jpg" alt="Aluguel de temporada em Vila Velha via Airbnb">
+    </a>
+  </div>
+
+  <div class="slide">
+    <a href="https://ocomerciobrasileironoticia.blogspot.com/">
+      <img src="erp.webp" alt="Tecnologia ERP em destaque no comércio local">
+    </a>
+  </div>
+
+  <div class="slide">
+    <a href="https://humorportaldf.blogspot.com/">
+      <img src="matematica.jpg" alt="Matemática divertida com humor capixaba">
+    </a>
+  </div>
+
+  <span class="prev" onclick="moveSlide(-1)">❮</span>
+  <span class="next" onclick="moveSlide(1)">❯</span>
+</div>
+
+
+      <h2 id="historia">História do Bairro</h2>
+      <p>Fundada em 1535 com a chegada do donatário Vasco Fernandes Coutinho, a região era originalmente ocupada por uma fazenda costeira. Com o passar dos séculos, foi se transformando em um centro urbano sofisticado, mantendo o equilíbrio entre o passado histórico e a modernidade.</p>
+
+      <h2 id="turismo">Turismo e Lazer</h2>
+      <p>Além das praias limpas e seguras, a Praia da Costa oferece diversas opções de lazer:</p>
+      <ul>
+        <li><strong>Farol de Santa Luzia:</strong> ícone histórico da navegação capixaba.</li>
+        <li><strong>Shopping Praia da Costa:</strong> centro comercial moderno com opções de lazer e gastronomia.</li>
+        <li><strong>Calçadão revitalizado:</strong> ideal para caminhada, pedalada e contemplação do mar.</li>
+        <li><strong>Eventos culturais:</strong> feiras, festivais e atividades esportivas ao longo do ano.</li>
+      </ul>
+    </article>
+
+    <section class="noticias" id="noticias">
+      <h2>Últimas Notícias</h2>
+
+      <article>
+        <h3>📍 Ciclofaixa será ampliada até o Morro do Moreno</h3>
+        <p>A Prefeitura de Vila Velha anunciou a ampliação da ciclofaixa ligando a Praia da Costa ao Morro do Moreno. A obra começa em julho e deve durar 90 dias.</p>
+        <a href="/noticias/ciclofaixa-praia-da-costa">Leia mais</a>
+      </article>
+
+      <article>
+        <h3>🎨 Feira de Artesanato movimenta a orla no fim de semana</h3>
+        <p>Mais de 40 expositores capixabas participaram da Feira de Artesanato no último domingo, atraindo centenas de visitantes à orla da Praia da Costa.</p>
+        <a href="/noticias/feira-artesanato-2025">Leia mais</a>
+      </article>
+
+      <article>
+        <h3>🏘️ Praia da Costa lidera valorização imobiliária no ES</h3>
+        <p>Dados de 2025 indicam aumento de 12% no valor do metro quadrado. O bairro continua como referência em qualidade de vida e segurança.</p>
+        <a href="/noticias/mercado-imobiliario-vila-velha">Leia mais</a>
+      </article>
+
+      <article>
+  <h3>🏛️ Vila Velha cria cinco novas secretarias municipais</h3>
+  <p>Com foco em gestão moderna, a prefeitura anunciou as secretarias de Turismo, Agricultura, Mulheres e outras, visando maior eficiência administrativa.</p>
+  <a href="https://es360.com.br/dia-a-dia/noticia/apos-mudancas-vila-velha-cria-cinco-novas-secretarias/">Leia mais</a>
+</article>
+
+<article>
+  <h3>🎂 Vila Velha se prepara para comemorar 490 anos</h3>
+  <p>A cidade mais antiga do Espírito Santo recebe investimentos em infraestrutura e eventos culturais para celebrar seu aniversário.</p>
+  <a href="https://eshoje.com.br/politica/2025/04/arnaldinho-articula-com-vereadores-acoes-para-os-490-anos-de-vila-velha-e-anuncia-pacote-de-investimentos/">Leia mais</a>
+</article>
+
+<article>
+  <h3>🏆 Cidade é destaque nacional em gestão pública</h3>
+  <p>Vila Velha foi reconhecida como uma das cidades mais bem geridas do país, com prêmios em transparência, finanças e eficiência.</p>
+  <a href="https://www.vilavelha.tudoem.com.br/noticia/2025/05/90/vila-velha-e-destaque-nacional">Leia mais</a>
+</article>
+
+<article>
+  <h3>📈 Vila Velha lidera abertura de empresas no ES</h3>
+  <p>Com saldo positivo de quase mil CNPJs em um mês, a cidade reafirma seu papel como centro empreendedor do Espírito Santo.</p>
+  <a href="https://eshoje.com.br/economia/2025/02/vila-velha-segue-liderando-abertura-de-empresas-no-estado-em-2025/">Leia mais</a>
+</article>
+
+<article>
+  <h3>💰 Mais de R$ 6 bilhões em investimentos até 2028</h3>
+  <p>O plano estratégico da gestão municipal inclui obras de mobilidade, saúde, educação e inovação tecnológica.</p>
+  <a href="https://aquinoticias.com/2025/05/estudo-mostra-que-vila-velha-celebra-490-anos-com-avancos-economicos/">Leia mais</a>
+</article>
+
+<article>
+  <h3>🚲 Nova ciclofaixa ligará Praia da Costa ao Morro do Moreno</h3>
+  <p>Com previsão de entrega em três meses, a via será voltada ao turismo e à mobilidade sustentável.</p>
+  <a href="https://www.folhaonline.es/category/noticias-de-vila-velha/">Leia mais</a>
+</article>
+
+<article>
+  <h3>🧒 UMEI Tia Nenzinha ganha anexo com 230 novas vagas</h3>
+  <p>Nova estrutura reforça a expansão da educação infantil no bairro Divino Espírito Santo.</p>
+  <a href="https://folhavilavelha.com.br/prefeitura-inaugura-anexo-e-amplia-oportunidades-na-educacao-infantil/vila-velha/noticias/">Leia mais</a>
+</article>
+
+<article>
+  <h3>📊 Cidade lidera rankings de transparência e gestão fiscal</h3>
+  <p>Vila Velha alcança o 1º lugar em “Capacidade de Pagamento” e “Autonomia”, segundo indicadores da Firjan e ENAP.</p>
+  <a href="https://www.vilavelha.tudoem.com.br/noticia/2025/05/90/vila-velha-e-destaque-nacional">Leia mais</a>
+</article>
+
+<article>
+  <h3>🎨 Feira de Artesanato movimenta orla no fim de semana</h3>
+  <p>Com música ao vivo e mais de 40 expositores, evento atraiu centenas de pessoas à Praia da Costa.</p>
+  <a href="/noticias/feira-artesanato-2025">Leia mais</a>
+</article>
+
+<article>
+  <h3>🎤 Jesus Vida Verão reúne multidão na Praia de Itapoã</h3>
+  <p>Evento cristão contou com grandes atrações e bateu recorde de público em 2025.</p>
+  <a href="https://pt.wikipedia.org/wiki/Jesus_Vida_Ver%C3%A3o">Leia mais</a>
+</article>
+
+<article>
+  <h3>💡 Vila Velha vence prêmio internacional de turismo</h3>
+  <p>Reconhecida por inovação e sustentabilidade, a cidade recebeu o Prêmio Ibero-Americano de Destino Turístico Inteligente.</p>
+  <a href="https://aquinoticias.com/2025/03/vila-velha-vence-premio-internacional-de-turismo-em-duas-categorias/">Leia mais</a>
+</article>
+
+<article>
+  <h3>🏗️ Obras em 3 bairros melhoram mobilidade urbana</h3>
+  <p>Requalificações de vias e calçadas estão sendo feitas em Itapuã, Glória e Aribiri com recursos do PAC.</p>
+  <a href="https://www.folhaonline.es/category/noticias-de-vila-velha/">Leia mais</a>
+</article>
+
+<article>
+  <h3>🌳 Parque Natural do Morro do Moreno receberá revitalização</h3>
+  <p>Projeto inclui trilhas, mirantes e placas educativas, promovendo ecoturismo seguro e acessível.</p>
+  <a href="https://vilavelha.es.gov.br">Leia mais</a>
+</article>
+
+<article>
+  <h3>🚨 Vila Velha investe em câmeras de segurança na orla</h3>
+  <p>Monitoramento eletrônico será ampliado para reforçar segurança na Praia da Costa e Praia de Itapoã.</p>
+  <a href="https://vilavelha.es.gov.br">Leia mais</a>
+</article>
+
+<article>
+  <h3>📚 Cidade lança programa “Ler é Viver” para escolas públicas</h3>
+  <p>Iniciativa distribuirá kits de livros e promoverá leitura em escolas da rede municipal.</p>
+  <a href="https://vilavelha.es.gov.br">Leia mais</a>
+</article>
+
+<article>
+  <h3>🏖️ Praia da Costa entre os destinos mais buscados no verão</h3>
+  <p>Segundo sites de turismo, o bairro ficou entre os 5 mais pesquisados do Brasil na temporada de janeiro.</p>
+  <a href="/noticias/turismo-verao-praia-da-costa">Leia mais</a>
+</article>
+
+<article>
+  <h3>🚍 Vila Velha amplia linhas de ônibus para bairros periféricos</h3>
+  <p>Novas rotas e horários foram integrados ao sistema Transcol, beneficiando Terra Vermelha e Ponta da Fruta.</p>
+  <a href="https://vilavelha.es.gov.br">Leia mais</a>
+</article>
+
+<article>
+  <h3>📺 Vila Velha terá documentário sobre história da cidade</h3>
+  <p>Produção audiovisual trará depoimentos, imagens históricas e será exibida em escolas e plataformas digitais.</p>
+  <a href="/noticias/documentario-historia-vila-velha">Leia mais</a>
+</article>
+
+<article>
+  <h3>🚧 Projeto Orla Viva entra na fase final de execução</h3>
+  <p>Com nova iluminação, paisagismo e sinalização, a Praia da Costa está quase totalmente revitalizada.</p>
+  <a href="/noticias/orla-viva-praia-da-costa">Leia mais</a>
+</article>
+
+<article>
+  <h3>💼 Vila Velha oferece capacitação para jovens empreendedores</h3>
+  <p>Parceria com Sebrae promove cursos gratuitos para jovens de 18 a 29 anos que desejam abrir seu próprio negócio.</p>
+  <a href="/noticias/jovem-empreendedor-vila-velha">Leia mais</a>
+</article>
+
+
+
+<article>
+  <h3>🎉 Festa da Penha 2025 movimenta Vila Velha</h3>
+  <p>A tradicional festa religiosa acontece de 20 a 28 de abril, com missas, atrações noturnas e romarias que atraem milhares de fiéis.</p>
+  <a href="https://www.folhaonline.es/category/noticias-de-vila-velha/">Leia mais</a>
+</article>
+
+<article>
+  <h3>🏆 Vila Velha é destaque em premiações nacionais e internacionais</h3>
+  <p>A cidade recebeu prêmios por estratégias inovadoras em turismo e ambiente de negócios, reforçando sua posição de liderança no ES.</p>
+  <a href="https://www.folhaonline.es/category/noticias-de-vila-velha/">Leia mais</a>
+</article>
+
+<article>
+  <h3>🚔 Guarda Municipal detém jovem com moto adulterada em Cariacica</h3>
+  <p>A ação ocorreu no Parque Gramado, reforçando a segurança na região.</p>
+  <a href="https://www.cariacica.es.gov.br/noticias">Leia mais</a>
+</article>
+
+<article>
+  <h3>📚 Cariacica realiza 1º Torneio de Queimada e ações culturais nas escolas</h3>
+  <p>Evento reuniu estudantes e promoveu integração por meio do esporte e da cultura na rede municipal.</p>
+  <a href="https://www.cariacica.es.gov.br/noticias">Leia mais</a>
+</article>
+
+<article>
+  <h3>🏥 UBS de Retiro Saudoso em fase final de acabamento</h3>
+  <p>A unidade de saúde ampliará o atendimento à população da Região 12 em Cariacica.</p>
+  <a href="https://www.cariacica.es.gov.br/noticias">Leia mais</a>
+</article>
+
+<article>
+  <h3>⚽ Obras do Complexo Esportivo Hugo Viola avançam em Jardim América</h3>
+  <p>O espaço oferecerá diversas modalidades esportivas e lazer para moradores de Cariacica.</p>
+  <a href="https://www.cariacica.es.gov.br/noticias">Leia mais</a>
+</article>
+
+
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Guia Vila Velha. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Slideshow Script -->
+  <script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[index].classList.add('active');
+    }
+
+    function moveSlide(n) {
+      slideIndex = (slideIndex + n + slides.length) % slides.length;
+      showSlide(slideIndex);
+    }
+
+    // Auto slide
+    setInterval(() => moveSlide(1), 5000);
+  </script>
+
+  <!-- SEO JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Guia Praia da Costa",
+    "url": "https://www.seusite.com.br/praia-da-costa",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Vila Velha",
+      "addressRegion": "ES",
+      "addressCountry": "BR"
+    },
+    "description": "Informações turísticas, históricas e imobiliárias sobre o bairro Praia da Costa, em Vila Velha (ES)."
+  }
+  </script>
+
+
+
+
+  <div id="iframe-wrapper" role="region" aria-label="Anúncio fixo">
+  <button id="close-btn" aria-label="Fechar anúncio">×</button>
+  <iframe
+    id="iframe-fixo"
+    src="https://remarkable-gelato-4db597.netlify.app/modeloanuncio.html"
+    title="Anúncio Fixo Responsivo"
+    loading="lazy"
+    ></iframe>
+</div>
+
+<script>
+  // Espera 10 segundos para exibir o botão de fechar
+  setTimeout(() => {
+    document.getElementById("close-btn").style.display = "block";
+  }, 10000);
+
+  // Ação do botão para fechar o iframe
+  document.getElementById("close-btn").addEventListener("click", () => {
+    document.getElementById("iframe-wrapper").style.display = "none";
+  });
+</script>
+</body>
+</html>
